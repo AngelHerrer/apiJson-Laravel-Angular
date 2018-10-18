@@ -1,0 +1,54 @@
+<app-nav-header></app-nav-header>
+<!-- <app-nav-sidebar></app-nav-sidebar> -->
+<br><br><br><br>
+<div class="container">
+  <h1>Update Employee</h1>
+  <form class="form-employee" (ngSubmit)="updateEmployee()" #employeeForm="ngForm">
+    <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{message}}
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="isbn">Nombre</label>
+        <input type="text" class="form-control" placeholder="nombre" [(ngModel)]="employeeData.nombre" name="nombre" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="title">Email</label>
+        <input type="text" class="form-control" placeholder="email" [(ngModel)]="employeeData.email" name="email" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="author">Puesto</label>
+        <input type="text" class="form-control" placeholder="puesto" [(ngModel)]="employeeData.puesto" name="puesto" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label for="description">Fecha de nacimiento</label>
+        <input type="text" class="form-control" date="dd/mm/yyyy" placeholder="Fecha de nacimiento" [(ngModel)]="employeeData.f_nacimiento" name="f_nacimiento" required/>
+      </div>
+    </div>
+      <div class="form-group">
+      <div class="col-md-12">
+        <label for="author">Domicilio</label>
+        <input type="text" class="form-control" placeholder="Author" [(ngModel)]="employeeData.domicilio" name="domicilio" required/>
+      </div>
+    </div>
+      <div class="form-group">
+      <div class="col-md-12">
+        <label for="author">Skill</label>
+        <input type="text" class="form-control" placeholder="skill" [(ngModel)]="employeeData.skill" name="skill" required/>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-2 margin-top-10">
+        <button class="btn btn-flat btn-primary" type="submit" [disabled]="!employeeForm.form.valid">Submit</button>
+        <a class="btn btn-danger" routerLink="/employee">Cancel</a>
+      </div>
+    </div>
+  </form>
+</div>

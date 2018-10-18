@@ -1,0 +1,64 @@
+<app-nav-header></app-nav-header>
+<!-- <app-nav-sidebar></app-nav-sidebar> -->
+<div class="container">
+    <form class="form-employee" id="form-id" (ngSubmit)="addEmployee()" #employeeForm="ngForm" enctype="multipart/form-data">
+        <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{message}}
+        </div>
+        <div class="panel panel-default ">
+            <div class="panel-heading">Add Employee</div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="employeeData.nombre" name="nombre" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="employeeData.email" name="email" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="puesto">Puesto</label>
+                        <input type="text" class="form-control" placeholder="Puesto" [(ngModel)]="employeeData.puesto" name="puesto" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="description">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" placeholder="Fecha de Nacimiento" [(ngModel)]="employeeData.f_nacimiento" name="f_nacimiento" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="image">Domicilio</label>
+                        <input type="text" class="form-control" placeholder="Domicilio" [(ngModel)]="employeeData.domicilio" name="domicilio" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="image">Skill</label>
+                        <input type="text" class="form-control" placeholder="Skill" [(ngModel)]="employeeData.skill" name="skill" required/>
+                    </div>
+                </div>
+                <!--<app-skill></app-skill>-->
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="image">Foto</label>
+                        <input type="file" class="form-control" (change)="onFileSelected($event)" placeholder="foto" [(ngModel)]="employeeData.image" name="image"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 margin-top-10">
+                        <button class="btn btn-primary" type="submit" [disabled]="!employeeForm.form.valid">Submit</button>
+                        <a class="btn btn-danger" routerLink="/employee">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>  
