@@ -1,5 +1,5 @@
 
-#Installation steps 
+#instalacion
 
 1. En el frontend ejecutar el comando <br>
 	npm install<br>
@@ -14,5 +14,5 @@
 	hay que tomar la segunda key y ponerla en frontend/enviroments/environment.ts y frontend/enviroments/environment.prod.ts <br>
 	despues en el backend url ex: http://localhost:8000	<br>
     <br>
-4.En fronetend cejecutar ng serve in en el backend run php artisan serve 
+4.En fronetend ejecutar ng serve in en el backend run php artisan serve 
     
